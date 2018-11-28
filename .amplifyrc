@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "checkrweb-20180906094501-authRole",
+            "UnauthRoleArn": "arn:aws:iam::268013942894:role/checkrweb-20180906094501-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::268013942894:role/checkrweb-20180906094501-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "checkrweb-20180906094501-deployment",
+            "UnauthRoleName": "checkrweb-20180906094501-unauthRole",
+            "StackName": "checkrweb-20180906094501",
+            "StackId": "arn:aws:cloudformation:us-west-2:268013942894:stack/checkrweb-20180906094501/d1319a80-b1eb-11e8-bd72-062d9ae1b752"
+        }
+    }
+}
