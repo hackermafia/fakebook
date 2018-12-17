@@ -58,14 +58,14 @@ class NormalSignUpForm extends React.Component {
                             this.setState({ showModal: true, componentProps: { password, username } })
                             : Modal.error({
                                 title: 'Ooops!',
-                                content: 'Ha habido un error inesperado -- signing into your account: ' + error.message
+                                content: 'There has been an unexpected error -- signing into your account: ' + error.message
                             });
                     };
                 } else {
                     (error.code) ?
                         Modal.error({
                             title: 'Ooops!',
-                            content: 'Ha habido un error inesperado -- creating your account: ' + error.message
+                            content: 'There has been an unexpected error -- creating your account: ' + error.message
                         }) : void (0);
                 };
             };
@@ -73,7 +73,7 @@ class NormalSignUpForm extends React.Component {
             this.setState({ loading: false });
             Modal.error({
                 title: 'Ooops!',
-                content: 'Tus contraseñas no coinciden!'
+                content: 'Passwords do not match!'
             });
         };
     };
@@ -84,7 +84,7 @@ class NormalSignUpForm extends React.Component {
                 <Modal
                     visible={this.state.showModal}
                     footer={null}
-                    title='Please input your email para continuar'
+                    title='Please input your email to continue'
                     onCancel={() => this.setState({ showModal: false })}
                     destroyOnClose
                 >

@@ -142,46 +142,10 @@ class NormalLoginForm extends React.Component {
         password = password ? password.trim() : null;
         return (
             <Form onSubmit={this.confirmCode}>
-                <React.Fragment>
-                    {
-                        username ?
-                            <Form.Item
-                                style={{ height: '0px', margin: '0px 0px 0px 0px', padding: '0px 0px 0px 0px' }} >
-                                {
-                                    getFieldDecorator('username', { initialValue: username })(<div />)
-                                }
-                            </Form.Item> :
-                            <Form.Item>
-                                {
-                                    getFieldDecorator('username', { rules: [{ required: true, message: 'Please input your username!' }] })(
-                                        <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username or Email" />)
-                                }
-                            </Form.Item>
-                    }
-                </React.Fragment>
-                <React.Fragment>
-                    {
-                        password ?
-                            <Form.Item
-                                style={{ height: '0px', margin: '0px 0px 0px 0px', padding: '0px 0px 0px 0px' }} >
-                                {
-                                    getFieldDecorator('password', { initialValue: password })(<div />)
-                                }
-                            </Form.Item> :
-                            <Form.Item>
-                                {
-                                    getFieldDecorator('password', { rules: [{ required: true, message: 'Please input your password!' }], })(
-                                        <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />)
-                                }
-                            </Form.Item>
-
-                    }
-                </React.Fragment>
                 <Form.Item>
-                    {
-                        getFieldDecorator('code', { rules: [{ required: true, message: 'Please input your confirmation code!' }] })(
-                            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="text" placeholder="Code" />)
-                    }
+                    <h2>
+                        We have sent a url link to your email to confirm it and finish setting up your account
+                    </h2>
                 </Form.Item>
                 <Form.Item style={{ marginBottom: '0px', textAlign: 'center' }}>
                     <Button loading={this.state.loading} block type="primary" htmlType="submit">Confirm Code</Button>
