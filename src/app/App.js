@@ -7,7 +7,7 @@ class App extends React.Component {
       <AppLayout
         items={
           this.props.isAuthenticated
-            ? ['Home', 'Posts',]
+            ? ['Home', 'Posts', 'Account']
             : ['Home', 'Sign In', 'Sign Up']
         }
         mode="horizontal"
