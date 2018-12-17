@@ -3,14 +3,16 @@ import { pascalToKebab, splitOnUnderscore, collapse } from 'utilities';
 import { Route } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
 export default ({ name, view, isAuthenticated }) => {
+    const isPrivate = name.includes("PRIVATE_");
+    const newName = isPrivate ? name.replace("PRIVATE_", "") : name;
     const config = {
-        name: splitOnUnderscore(name).pop(),
+        name: splitOnUnderscore(newName).pop(),
         component: view,
-        privateRoute: false,
-        parents: collapse(splitOnUnderscore(name).reverse().slice(1), ['']),
+        privateRoute: isPrivate,
+        parents: collapse(splitOnUnderscore(newName).reverse().slice(1), ['']),
         params: [''],
-        path: name === 'Home' ? '/' : false,
-        exact: Boolean(name === 'Home' || !collapse(splitOnUnderscore(name).reverse().slice(1), ['']).length),
+        path: newName === 'Home' ? '/' : false,
+        exact: Boolean(newName === 'Home' || !collapse(splitOnUnderscore(newName).reverse().slice(1), ['']).length),
     };
     const configsFromView = view.routeConfigs ? view.routeConfigs() : false;
     if (configsFromView) {

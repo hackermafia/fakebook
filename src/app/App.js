@@ -5,7 +5,11 @@ class App extends React.Component {
   render() {
     return (
       <AppLayout
-        items={['Home', 'View1', 'View2']}
+        items={
+          this.props.isAuthenticated
+            ? ['Home', 'Posts',]
+            : ['Home', 'Sign In', 'Sing Up']
+        }
         mode="horizontal"
         style={{ lineHeight: '64px', backgroundColor: 'rgba(255,255,255,0.9)' }}
         theme='light'
