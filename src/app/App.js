@@ -8,7 +8,7 @@ class App extends React.Component {
         items={
           this.props.isAuthenticated
             ? ['Home', 'Posts',]
-            : ['Home', 'Sign In', 'Sing Up']
+            : ['Home', 'Sign In', 'Sign Up']
         }
         mode="horizontal"
         style={{ lineHeight: '64px', backgroundColor: 'rgba(255,255,255,0.9)' }}
