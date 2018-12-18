@@ -8,7 +8,7 @@ export default class Routes extends React.Component {
         el =>
             RouteConfigurator({
                 ...el,
-                isAuthenticated: this.props.isAuthenticated
+                childProps: { ...this.props }
             })
     );
     render() {

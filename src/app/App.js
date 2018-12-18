@@ -14,7 +14,7 @@ class App extends React.Component {
         style={{ lineHeight: '64px', backgroundColor: 'rgba(255,255,255,0.9)' }}
         theme='light'
       >
-        <Routes isAuthenticated={this.props.isAuthenticated} />
+        <Routes {...this.props} />
       </AppLayout>
     );
   };

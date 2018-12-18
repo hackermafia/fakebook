@@ -16,6 +16,7 @@ export default class Posts extends React.Component {
         captionInput: ""
     };
     render() {
+        console.log(this.props.childProps.name, this.props.childProps.family_name)
         return (
             <div>
                 <h1>Hello from Posts tab</h1>
@@ -23,6 +24,7 @@ export default class Posts extends React.Component {
                     this.state.posts.map(
                         post => <Card
                             style={{ width: 300 }}
+                            key={Math.random()}
                             cover={
                                 <img
                                     alt="example"

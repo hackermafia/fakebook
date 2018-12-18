@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => (
+const PrivateRoute = ({ component: Component, childProps, ...rest }) => (
     <Route
         {...rest}
         render={props =>
-            isAuthenticated ?
-                <Component {...props} isAuthenticated={isAuthenticated} /> :
+            childProps.isAuthenticated ?
+                <Component {...props} childProps={childProps} /> :
                 <Redirect to={{ pathname: "/sign-in" }} />
         }
     />

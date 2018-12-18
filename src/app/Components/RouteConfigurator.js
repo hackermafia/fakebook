@@ -2,7 +2,7 @@ import React from 'react';
 import { pascalToKebab, splitOnUnderscore, collapse } from 'utilities';
 import { Route } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
-export default ({ name, view, isAuthenticated }) => {
+export default ({ name, view, childProps }) => {
     const isPrivate = name.includes("PRIVATE_");
     const newName = isPrivate ? name.replace("PRIVATE_", "") : name;
     const config = {
@@ -33,12 +33,11 @@ export default ({ name, view, isAuthenticated }) => {
             + params.join('/:')
         ),
         key: [...parents, name].map(el => pascalToKebab(el)).join('/'),
-        isAuthenticated,
+        childProps,
         component,
         exact,
     });
     const props = getPropsOnConfig(config);
-    console.log(config.name.toUpperCase(), { props });
     if (config.name === 'NotFound') return <Route key='not-found' component={view} />
     if (config.privateRoute) return <PrivateRoute {...props} />;
     if (!config.privateRoute) return <Route {...props} />;
